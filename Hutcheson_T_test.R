@@ -1,38 +1,20 @@
 #' @title Hutcheson T-test for two diversity indices.
 
-#' 
-
 #' @description This function performs Hutcheson (1970) to test the significance of the difference between two communities' diversity indices.
-
-#' 
 
 #' @details This function performs Hutcheson's t-test for comparing two diversity indices. This test is based on Shannon diversity indices' value computed using a logarithm base specified by the user. One-sided or two-sided tests are available.  
 
-#' 
-
 #' @note missing values will be replaced with zero values
-
-#' 
 
 #' @aliases Hutcheson.T.test.default
 
-#' 
-
 #' @param shanon.base A numeric indicating the logarithm base for the Shanon indices. Defaults to \emph{e}.
-
-#' 
 
 #' @param alternative A character indicating the alternative hypothesis. Can be "two.sided"(default), "less", "greater", or "auto"
 
-#' 
-
 #' @param difference  A numeric indicating the value hypothesized of the difference between the indices. Defaults to 0.
 
-#' 
-
 #' @return A list with class "htest" containing the following components:
-
-#' 
 
 #' \itemize{
 #'   \item statistic: Value of the Hutcheson T statistic
@@ -46,25 +28,15 @@
 
 #' }
 
-#'
-
 #' @seealso See \code{t.test}, \code{\link[t.test]{t.test}} in \pkg{stats}
 
-#' 
-
 #' @author Hugo Salinas \email{hugosal@comunidad.unam.mx}, this function is based on the Student's t-Test \code{\link[t.test]{t.test}} in \pkg{stats}.
-
-#'
 
 #' @references 
 
 #' Zar, Jerrold H. 2010. Biostatistical Analysis. 5th ed. Pearson. pp. 174-176.
 
-#' 
-
 #' Hutcheson, Kermit. 1970. A Test for Comparing Diversities Based on the Shannon Formula. Journal of Theoretical Biology 29: 151-54.
-
-#' 
 
 #' @examples
 
