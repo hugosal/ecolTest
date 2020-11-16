@@ -58,5 +58,5 @@ See \code{\link[stats]{t.test}} in \pkg{stats} package.
 \author{
 David Ramirez Delgado \email{tucorreo@correo.com}.
 
-Hugo Salinas \email{hugosal@comunidad.unam.mx}, this function is based on the Student's t-Test \code{\link[stats]{t.test}} \pkg{stats} in package .
+Hugo Salinas \email{hugosal@comunidad.unam.mx}, this function is based on the Student's t-Test \code{\link[stats]{t.test}} in \pkg{stats} package .
 }
