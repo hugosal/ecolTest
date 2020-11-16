@@ -6,7 +6,7 @@
 
 #' @note missing values will be replaced with zero values
 
-#' @aliases Hutcheson.T.test.default
+#' @param x,y Numeric vector of abundance of species for community \emph{x} and community \emph{y}
 
 #' @param shanon.base A numeric indicating the logarithm base for the Shanon indices. Defaults to \emph{e}.
 
@@ -28,13 +28,17 @@
 
 #' }
 
-#' @seealso See \code{t.test}, \code{\link[t.test]{t.test}} in \pkg{stats}
+#' @seealso See \code{\link[stats]{t.test}} in \pkg{stats} package.
 
-#' @author Hugo Salinas \email{hugosal@comunidad.unam.mx}, this function is based on the Student's t-Test \code{\link[t.test]{t.test}} in \pkg{stats}.
+#' @author David Ramirez Delgado \email{tucorreo@correo.com}.
+
+#' @author Hugo Salinas \email{hugosal@comunidad.unam.mx}, this function is based on the Student's t-Test \code{\link[stats]{t.test}} in \pkg{stats} package .
 
 #' @references 
 
 #' Zar, Jerrold H. 2010. Biostatistical Analysis. 5th ed. Pearson. pp. 174-176.
+
+#' 
 
 #' Hutcheson, Kermit. 1970. A Test for Comparing Diversities Based on the Shannon Formula. Journal of Theoretical Biology 29: 151-54.
 
