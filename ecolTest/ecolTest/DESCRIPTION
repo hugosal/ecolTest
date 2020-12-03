@@ -1,12 +1,12 @@
 Package: ecolTest
-Title: Community Ecology Tests
-Version: 0.0.0.1
+Title: Community Ecology Test.
+Version: 0.0.0.9000
 Authors@R: 
     person(given = "Hugo",
            family = "Salinas",
-           role = c("aut"),
+           role = c("aut", "cre"),
            email = "hugosal@comunidad.unam.mx")
-Description:  Community Ecology Tests
+Description: Community Ecology Test.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8

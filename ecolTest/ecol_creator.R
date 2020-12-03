@@ -1,9 +1,9 @@
 setwd("C:/Users/user/Desktop/R/THutcheson/Hutcheson-T-test/trunk/ecolTest")
-library(roxygen2)
+library("roxygen2")
 library("devtools")
-create("ecolTest")
+#create("ecolTest")
 setwd("./ecolTest/")
-document()
+#document()
 setwd("..")
 
 install("ecolTest")

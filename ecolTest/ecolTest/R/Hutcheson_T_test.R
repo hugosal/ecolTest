@@ -8,7 +8,7 @@
 
 #' @param x,y Numeric vector of abundance of species for community \emph{x} and community \emph{y}
 
-#' @param shanon.base A numeric indicating the logarithm base for the Shanon indices. Defaults to \emph{e}.
+#' @param shannon.base A numeric indicating the logarithm base for the Shanon indices. Defaults to \emph{e}.
 
 #' @param alternative A character indicating the alternative hypothesis. Can be "two.sided"(default), "less", "greater", or "auto"
 
@@ -32,8 +32,8 @@
 
 #' @author David Ramirez Delgado \email{tucorreo@correo.com}.
 
-#' @author Hugo Salinas \email{hugosal@comunidad.unam.mx}, this function is based on the Student's t-Test \code{\link[stats]{t.test}} in \pkg{stats} package .
-
+#' @author Hugo Salinas \email{hugosal@comunidad.unam.mx}.
+#' 
 #' @references 
 
 #' Zar, Jerrold H. 2010. Biostatistical Analysis. 5th ed. Pearson. pp. 174-176.
@@ -52,7 +52,7 @@
 
 
 Hutcheson.T.test<-function(x, y,
-                           shanon.base = exp(1),
+                           shannon.base = exp(1),
                             alternative = "two.sided", difference = 0){
   dname<-paste((deparse(substitute(x))),", ",(deparse(substitute(y))))
   x<-drop(as.matrix(x))
@@ -63,6 +63,10 @@ Hutcheson.T.test<-function(x, y,
   
   if (any(c(x,y) < 0, na.rm = TRUE)){
     stop("input data must be non-negative")}
+  
+  if (any(c(length(x) < 2,length(y) < 2))){
+    stop("input data must contain at least two elements")}
+
   
   if (any(is.na(c(x,y)))){
     x[is.na(x)]<-0
@@ -82,9 +86,9 @@ Hutcheson.T.test<-function(x, y,
   }
   xy<-matrix(c(x,y),ncol=2)
   N<-apply(xy,2,sum)
-  H<-(N*log(N, shanon.base)-apply(xy*log(xy,shanon.base), 2,sum,na.rm = TRUE))/N
-  S<-(apply(xy*log(xy,shanon.base)**2, 2,sum,na.rm = TRUE) -
-      ((apply(xy*log(xy,shanon.base), 2,sum,na.rm = TRUE)**2)/N))/(N**2)
+  H<-(N*log(N, shannon.base)-apply(xy*log(xy,shannon.base), 2,sum,na.rm = TRUE))/N
+  S<-(apply(xy*log(xy,shannon.base)**2, 2,sum,na.rm = TRUE) -
+      ((apply(xy*log(xy,shannon.base), 2,sum,na.rm = TRUE)**2)/N))/(N**2)
   HutchesonTstat<- (diff(H[c(2,1)])-difference)/sqrt(sum(S))
   df<-(sum(S)**2)/(sum(S**2/N))
   estimate_dif<-diff(H[c(2,1)])
@@ -111,4 +115,4 @@ Hutcheson.T.test<-function(x, y,
               alternative = alternative,data.name=dname)
     class(rval) <- "htest"
     return(rval)
-  }
+}

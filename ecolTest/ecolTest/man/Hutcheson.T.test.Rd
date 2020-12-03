@@ -7,7 +7,7 @@
 Hutcheson.T.test(
   x,
   y,
-  shanon.base = exp(1),
+  shannon.base = exp(1),
   alternative = "two.sided",
   difference = 0
 )
@@ -15,7 +15,7 @@ Hutcheson.T.test(
 \arguments{
 \item{x, y}{Numeric vector of abundance of species for community \emph{x} and community \emph{y}}
 
-\item{shanon.base}{A numeric indicating the logarithm base for the Shanon indices. Defaults to \emph{e}.}
+\item{shannon.base}{A numeric indicating the logarithm base for the Shanon indices. Defaults to \emph{e}.}
 
 \item{alternative}{A character indicating the alternative hypothesis. Can be "two.sided"(default), "less", "greater", or "auto"}
 
@@ -58,5 +58,5 @@ See \code{\link[stats]{t.test}} in \pkg{stats} package.
 \author{
 David Ramirez Delgado \email{tucorreo@correo.com}.
 
-Hugo Salinas \email{hugosal@comunidad.unam.mx}, this function is based on the Student's t-Test \code{\link[stats]{t.test}} in \pkg{stats} package .
+Hugo Salinas \email{hugosal@comunidad.unam.mx}.
 }
