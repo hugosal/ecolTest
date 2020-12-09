@@ -35,7 +35,7 @@ multiple.Hutcheson.T.test<-function(x,shannon.base=exp(1)){
   nx<-ny<-1:ncol(x)
   N<-apply(x,2,sum)
   H<-(N*log(N, shannon.base)-apply(x*log(x,shannon.base), 2,sum,na.rm = TRUE))/N
-  names(ny)<-names(nx)<-paste(colnames(lobos),round(H,2),sep = " ")
+  names(ny)<-names(nx)<-paste(colnames(x),round(H,2),sep = " ")
   f<-Vectorize(function(X,Y){Hutcheson.T.test(x[,X],x[,Y],
                 shannon.base = shannon.base, alternative = "auto")$p.value})
   p_values<-outer(nx, ny,FUN = f)
