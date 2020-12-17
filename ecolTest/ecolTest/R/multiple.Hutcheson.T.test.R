@@ -39,4 +39,4 @@ multiple.Hutcheson.T.test<-function(x,shannon.base=exp(1)){
   f<-Vectorize(function(X,Y){Hutcheson.T.test(x[,X],x[,Y],
                 shannon.base = shannon.base, alternative = "auto")$p.value})
   p_values<-outer(nx, ny,FUN = f)
-  return(p_values)}
+  return(list(p.values = p_values))}

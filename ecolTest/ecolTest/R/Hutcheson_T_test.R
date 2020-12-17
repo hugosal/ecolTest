@@ -50,10 +50,7 @@
 
 #' @export
 
-
-Hutcheson.T.test<-function(x, y,
-                           shannon.base = exp(1),
-                            alternative = "two.sided", difference = 0){
+Hutcheson.T.test<-function(x, y, shannon.base = exp(1), alternative = "two.sided", difference = 0){
   dname<-paste((deparse(substitute(x))),", ",(deparse(substitute(y))))
   x<-drop(as.matrix(x))
   y<-drop(as.matrix(y))
@@ -66,7 +63,6 @@ Hutcheson.T.test<-function(x, y,
   
   if (any(c(length(x) < 2,length(y) < 2))){
     stop("input data must contain at least two elements")}
-
   
   if (any(is.na(c(x,y)))){
     x[is.na(x)]<-0
@@ -104,7 +100,7 @@ Hutcheson.T.test<-function(x, y,
   else {
     pval <- 2 * pt(-abs(HutchesonTstat), df)
   }
-  names(HutchesonTstat) <- "Hutcheson T"
+  names(HutchesonTstat) <- "Hutcheson t-statistic"
   names(df) <- "df"
   names(H) <- c("Diversity of x","Diversity of y")
   mu<-difference
