@@ -11,7 +11,7 @@ Authors@R:
            role = c("aut"),
            email = "PONER EL EMAIL QUE QUIERAS"))
 Description: Functions and data sets to perform and demonstrate community ecology statistical tests, including Hutcheson's t-test.
-License: `use_mit_license()`
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
