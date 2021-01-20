@@ -9,7 +9,7 @@ Authors@R:
    person(given = "David",
            family = "Ramirez-Delgado",
            role = c("aut"),
-           email = "PONER EL EMAIL QUE QUIERAS"))
+           email = "linfocitoth1@gmail.com"))
 Description: Functions and data sets to perform and demonstrate community ecology statistical tests, including Hutcheson's t-test.
 License: MIT + file LICENSE
 Encoding: UTF-8
