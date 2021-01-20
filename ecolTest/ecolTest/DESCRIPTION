@@ -1,14 +1,17 @@
 Package: ecolTest
-Title: Community Ecology Test.
+Title: Community Ecology Tests
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Hugo",
+    c(person(given = "Hugo",
            family = "Salinas",
            role = c("aut", "cre"),
-           email = "hugosal@comunidad.unam.mx")
-Description: Community Ecology Test.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+           email = "hugosal@comunidad.unam.mx"),
+   person(given = "David",
+           family = "Ramirez-Delgado",
+           role = c("aut"),
+           email = "PONER EL EMAIL QUE QUIERAS"))
+Description: Functions and data sets to perform and demonstrate community ecology statistical tests, including Hutcheson's t-test.
+License: `use_mit_license()`
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
