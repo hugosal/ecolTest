@@ -8,11 +8,11 @@
 
 #' @param shannon.base A numeric value indicating the logarithm base for the Shanon indices. Defaults to \emph{e}.
 
-#' @param sp_num The number of species in the generated communty 
+#' @param sp_num The number of species in the generated communty
 
 #' @param ntotal The total number of individuals in the generated community
 
-#' @param tol The tolerance of the value of the diversity index of the generated community. Defaults to 0.0001 
+#' @param tol The tolerance of the value of the diversity index of the generated community. Defaults to 0.0001
 
 #' @param maxiter The maximum number of iterations to be performed. Defaults to 100
 
@@ -31,7 +31,7 @@
 
 #' @examples
 
-#' # Generate a community with diversity index 2, composed of 20 species 
+#' # Generate a community with diversity index 2, composed of 20 species
 #' # and 200 total individuals sampled
 #' set.seed(26)
 #' result<-generate.random.community(H_index = 2.7, sp_num = 20, ntotal = 200,
@@ -40,7 +40,7 @@
 #' total<-sum(random_community)
 #' #Compute H index
 #' -sum(random_community/total*log(random_community/total))
-#' 
+#'
 #' #Default maxiter argument will not converge
 #' set.seed(26)
 #' generate.random.community(H_index = 2.7, sp_num = 20, ntotal = 200)
@@ -51,7 +51,7 @@
 generate.random.community<-function(H_index, shannon.base=exp(1), sp_num, ntotal, tol=0.0001, maxiter=100, silent=F){
   if(sp_num<2){stop("Species number must be > 1")}
   if(H_index>log(sp_num,base = shannon.base)){stop("Impossible community (H>log(N))")}
-  if(H_index<0){stop("Invalid H_index argument")}  
+  if(H_index<0){stop("Invalid H_index argument")}
   H_index<--H_index
   a<-1/sp_num
   community<-runif(sp_num,0,a)
@@ -62,13 +62,13 @@ generate.random.community<-function(H_index, shannon.base=exp(1), sp_num, ntotal
     step_size<-0.1+(((0.001-0.1)/(maxiter))*iter)
       if(iter > maxiter){
         if(!(silent)){
-          print("Convergence failed")}
+          message("Convergence failed")}
         return(list(community=NA,n_iter=NA))
       }
     donor<-sample(1:sp_num,size = 1)
     for (recipient in sample((1:sp_num)[-donor])){
       neighbor<-community
-      neighbor[recipient]<-neighbor[recipient]+(neighbor[donor]*step_size)    
+      neighbor[recipient]<-neighbor[recipient]+(neighbor[donor]*step_size)
       neighbor[donor]<-neighbor[donor]-(neighbor[donor]*step_size)
       if (cost(neighbor)<cost(community)){
         community<-neighbor
@@ -78,6 +78,6 @@ generate.random.community<-function(H_index, shannon.base=exp(1), sp_num, ntotal
     iter<-iter+1
   }
   if(!(silent)){
-  print(paste("Convergence succesfull, niter= ",iter))}
+  message(paste("Convergence succesfull, No. iteration = ",iter))}
   return(list(community=round(community*ntotal),n_iter=iter))
   }
