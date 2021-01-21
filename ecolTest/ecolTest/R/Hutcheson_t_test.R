@@ -1,7 +1,8 @@
 #' @title Hutcheson's t-test for two diversity indices.
 
-#' @description This function performs Hutcheson (1970) to test the
-#' significance of the difference between two communities' diversity indices.
+#' @description This function performs Hutcheson's test for
+#' significance of the difference between the diversity indices of
+#' two communities.
 
 #' @details This function performs Hutcheson's t-test for comparing two
 #' diversity indices. This test is based on Shannon diversity indices' value
@@ -13,16 +14,16 @@
 #' @param x,y Numeric vector of abundance of species for community \emph{x}
 #' and community \emph{y}
 
-#' @param shannon.base A numeric indicating the logarithm base for the
-#' Shannon indices. Defaults to \emph{e}.
+#' @param shannon.base A numeric value indicating the logarithm base for the
+#' Shannon indices. Defaults to \emph{exp(1)}.
 
 #' @param alternative A character indicating the alternative hypothesis.
 #' Can be "two.sided"(default), "less", "greater", or "auto"
 
-#' @param difference  A numeric indicating the value hypothesized of the
-#' difference between the indices. Defaults to 0.
+#' @param difference  A numeric value indicating the hypothesized difference
+#' between the diversity indexes. Defaults to 0.
 
-#' @return A list with class "htest" containing the following components:
+#' @return A list of class "htest" containing the following components:
 
 #' \itemize{
 #'   \item statistic: Value of the Hutcheson t statistic
@@ -30,19 +31,20 @@
 #'   \item p.value: The test's p-value.
 #'   \item estimate: The Shannon diversity indices
 #'   \item null.value:The  hypothesized value of the difference between
-#'   the Shannon diversty indices
+#'   the Shannon diversty indexes
 #'   \item method: Name of the test
 #'   \item alternative: The alternative hypothesis
 #'   \item data.name: Name of the data used in the test
 
 #' }
 
-#' @seealso See \code{\link[stats]{t.test}} in \pkg{stats} package.
+#' @seealso See \code{\link[stats]{t.test}} in \pkg{stats} package for
+#' t-test.
 
-#' @author David Ramirez Delgado \email{tucorreo@correo.com}.
+#' @author David Ramirez Delgado \email{linfocitoth1@gmail.com}.
 
 #' @author Hugo Salinas \email{hugosal@comunidad.unam.mx}.
-#'
+
 #' @references
 
 #' Zar, Jerrold H. 2010. Biostatistical Analysis. 5th ed. Pearson. pp. 174-176.
@@ -110,7 +112,7 @@ Hutcheson_t_test <- function(x, y, shannon.base = exp(1),
   df <- (sum(S)**2)/(sum(S**2/N))
   estimate_dif <- diff(H[c(2,1)])
   if (alternative == "auto") {
-    alternative <-if (estimate_dif<0) {
+    alternative <- if (estimate_dif < 0) {
       "less"
     }else{
       "greater"
@@ -128,7 +130,7 @@ Hutcheson_t_test <- function(x, y, shannon.base = exp(1),
   }
   names(Hutchesontstat) <- "Hutcheson t-statistic"
   names(df) <- "df"
-  names(H) <- c("Diversity of x", "Diversity of y")
+  names(H) <- c("x", "y")
   mu <- difference
   names(mu) <- "difference in H'"
   rval <- list(statistic = Hutchesontstat, parameter = df, p.value = pval,

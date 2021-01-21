@@ -37,7 +37,7 @@
 #'    used to achieve convergence, else \emph{NA}
 #' }
 
-#' @author David Ramirez Delgado \email{tucorreo@correo.com}
+#' @author David Ramirez Delgado \email{linfocitoth1@gmail.com}
 
 #' @author Hugo Salinas \email{hugosal@comunidad.unam.mx}
 

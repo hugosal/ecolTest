@@ -1,31 +1,33 @@
 #' @title Multiple Hutcheson t-tests comparisons between communities.
 
-#' @description This function computes the p-values of the Hutcheson (1970) to
-#' test the significance of the difference between community diversity indexes.
+#' @description This function computes the p-values of the Hutcheson t-test to
+#' test the significance of the difference between more than two communities
+#' Shannon diversity indexes, in a pairwise way.
 
 #' @details This function performs Hutcheson's t-tests for comparing multiple
-#' diversity indexes pairwise. This test is based on Shannon diversity indices'
-#' value computed using a logarithm base specified by the user. The alternative
-#' hypothesis is one-sided, chosen automatically according to the sign of the
-#' difference between each pair of communities tested.
+#' diversity indexes pairwise. This test is based on the Shannon diversity
+#' index computed using a logarithm base specified by the user. The alternative
+#'  hypothesis is one-sided, chosen automatically according to the sign of
+#'  the difference between each pair of communities tested. The resulting
+#'  p-values of the test are returned in a matrix. To see full details of
+#'  the results of the test comparing two communities it is better
+#'  to use \code{Hutcheson_t_test()}.
 
-#' @note missing values will be replaced with zero values
+#' @note Missing values will be replaced with zero.
 
-#' @param x Numeric dataframe or matrix of the abundance of species per
-#' community. Each column corresponds to the communities and each row to
-#' a species.
+#' @param x Numeric dataframe or matrix of abundance of species per community.
+#' Columns correspond to the communities and row to species.
 
-#' @param shannon.base A numeric indicating the logarithm base for computing
-#' the Shannon indexes Defaults to \emph{e}.
+#' @param shannon.base Numeric value indicating the logarithm base for computing
+#' the Shannon indexes. Defaults to \emph{exp(1)}.
 
 #' @return A matrix whose entries are the p-values of the test. The names
 #' of the rows and columns are the names of the communities and its Shannon
 #' diversity index.
 
-#' @seealso See \code{\link[ecolTest]{Hutcheson_t_test}} in \pkg{ecolTest}
-#' package.
+#' @seealso See \code{\link{Hutcheson_t_test}} for test details.
 
-#' @author David Ramirez Delgado \email{tucorreo@correo.com}.
+#' @author David Ramirez Delgado \email{linfocitoth1@gmail.com}.
 
 #' @author Hugo Salinas \email{hugosal@comunidad.unam.mx}.
 

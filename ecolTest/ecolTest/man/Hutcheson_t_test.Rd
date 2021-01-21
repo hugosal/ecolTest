@@ -16,32 +16,33 @@ Hutcheson_t_test(
 \item{x, y}{Numeric vector of abundance of species for community \emph{x}
 and community \emph{y}}
 
-\item{shannon.base}{A numeric indicating the logarithm base for the
-Shannon indices. Defaults to \emph{e}.}
+\item{shannon.base}{A numeric value indicating the logarithm base for the
+Shannon indices. Defaults to \emph{exp(1)}.}
 
 \item{alternative}{A character indicating the alternative hypothesis.
 Can be "two.sided"(default), "less", "greater", or "auto"}
 
-\item{difference}{A numeric indicating the value hypothesized of the
-difference between the indices. Defaults to 0.}
+\item{difference}{A numeric value indicating the hypothesized difference
+between the diversity indexes. Defaults to 0.}
 }
 \value{
-A list with class "htest" containing the following components:
+A list of class "htest" containing the following components:
 \itemize{
 \item statistic: Value of the Hutcheson t statistic
 \item parameter: The degrees of freedom of the t statistic parameter
 \item p.value: The test's p-value.
 \item estimate: The Shannon diversity indices
 \item null.value:The  hypothesized value of the difference between
-the Shannon diversty indices
+the Shannon diversty indexes
 \item method: Name of the test
 \item alternative: The alternative hypothesis
 \item data.name: Name of the data used in the test
 }
 }
 \description{
-This function performs Hutcheson (1970) to test the
-significance of the difference between two communities' diversity indices.
+This function performs Hutcheson's test for
+significance of the difference between the diversity indices of
+two communities.
 }
 \details{
 This function performs Hutcheson's t-test for comparing two
@@ -63,10 +64,11 @@ Hutcheson, Kermit. 1970. A Test for Comparing Diversities Based on
 the Shannon Formula. Journal of Theoretical Biology 29: 151-54.
 }
 \seealso{
-See \code{\link[stats]{t.test}} in \pkg{stats} package.
+See \code{\link[stats]{t.test}} in \pkg{stats} package for
+t-test.
 }
 \author{
-David Ramirez Delgado \email{tucorreo@correo.com}.
+David Ramirez Delgado \email{linfocitoth1@gmail.com}.
 
 Hugo Salinas \email{hugosal@comunidad.unam.mx}.
 }
