@@ -45,6 +45,8 @@
 #' set.seed(26)
 #' generate.random.community(H_index = 2.7, sp_num = 20, ntotal = 200)
 
+#' @importFrom stats runif
+
 #' @export
 
 
@@ -52,6 +54,7 @@ generate.random.community<-function(H_index, shannon.base=exp(1), sp_num, ntotal
   if(sp_num<2){stop("Species number must be > 1")}
   if(H_index>log(sp_num,base = shannon.base)){stop("Impossible community (H>log(N))")}
   if(H_index<0){stop("Invalid H_index argument")}
+  if (!requireNamespace("stats", quietly = TRUE)) {stop("Package 'stats' is needed")}
   H_index<--H_index
   a<-1/sp_num
   community<-runif(sp_num,0,a)

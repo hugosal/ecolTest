@@ -27,7 +27,7 @@ missing values will be replaced with zero values
 # poner algun ejemlpo aqui tambien
 }
 \seealso{
-See \code{\link[ecolTest]{Hutcheson.T.test }} in \pkg{ecolTest} package.
+See \code{\link[ecolTest]{Hutcheson.T.test}} in \pkg{ecolTest} package.
 }
 \author{
 David Ramirez Delgado \email{tucorreo@correo.com}.

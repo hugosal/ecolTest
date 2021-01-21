@@ -43,7 +43,7 @@ This function generates a random community sample dataset that satisfies user-sp
 This function generates random community sample data: a numeric vector whose elements represent the number of individuals of a species in a sample. The generated sample data is composed of a number of species with a total number of individuals set by the user, such that the community has a Shannon's diversity index approximately equal to a user-specified argument.
 }
 \examples{
-# Generate a community with diversity index 2, composed of 20 species 
+# Generate a community with diversity index 2, composed of 20 species
 # and 200 total individuals sampled
 set.seed(26)
 result<-generate.random.community(H_index = 2.7, sp_num = 20, ntotal = 200,

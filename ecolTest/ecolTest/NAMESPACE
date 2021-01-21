@@ -3,3 +3,5 @@
 export(Hutcheson.T.test)
 export(generate.random.community)
 export(multiple.Hutcheson.T.test)
+importFrom(stats,pt)
+importFrom(stats,runif)

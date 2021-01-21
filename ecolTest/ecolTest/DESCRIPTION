@@ -11,6 +11,8 @@ Authors@R:
            role = c("aut"),
            email = "linfocitoth1@gmail.com"))
 Description: Functions and data sets to perform and demonstrate community ecology statistical tests, including Hutcheson's t-test.
+Imports:
+    stats
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

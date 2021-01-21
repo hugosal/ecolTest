@@ -2,7 +2,7 @@
 
 #' @description This function performs Hutcheson (1970) to test the significance of the difference between two communities' diversity indices.
 
-#' @details This function performs Hutcheson's t-test for comparing two diversity indices. This test is based on Shannon diversity indices' value computed using a logarithm base specified by the user. One-sided or two-sided tests are available.  
+#' @details This function performs Hutcheson's t-test for comparing two diversity indices. This test is based on Shannon diversity indices' value computed using a logarithm base specified by the user. One-sided or two-sided tests are available.
 
 #' @note missing values will be replaced with zero values
 
@@ -33,12 +33,12 @@
 #' @author David Ramirez Delgado \email{tucorreo@correo.com}.
 
 #' @author Hugo Salinas \email{hugosal@comunidad.unam.mx}.
-#' 
-#' @references 
+#'
+#' @references
 
 #' Zar, Jerrold H. 2010. Biostatistical Analysis. 5th ed. Pearson. pp. 174-176.
 
-#' 
+#'
 
 #' Hutcheson, Kermit. 1970. A Test for Comparing Diversities Based on the Shannon Formula. Journal of Theoretical Biology 29: 151-54.
 
@@ -48,28 +48,29 @@
 
 #' # prueba una cola, etc
 
+#' @importFrom stats pt
+
 #' @export
 
 Hutcheson.T.test<-function(x, y, shannon.base = exp(1), alternative = "two.sided", difference = 0){
   dname<-paste((deparse(substitute(x))),", ",(deparse(substitute(y))))
   x<-drop(as.matrix(x))
   y<-drop(as.matrix(y))
-  
-  if (!is.numeric(x)|!is.numeric(y)){
-    stop("input data must be numeric")}
-  
-  if (any(c(x,y) < 0, na.rm = TRUE)){
-    stop("input data must be non-negative")}
-  
-  if (any(c(length(x) < 2,length(y) < 2))){
-    stop("input data must contain at least two elements")}
-  
+
+  if (!is.numeric(x)|!is.numeric(y)){stop("input data must be numeric")}
+
+  if (any(c(x,y) < 0, na.rm = TRUE)){stop("input data must be non-negative")}
+
+  if (any(c(length(x) < 2,length(y) < 2))){stop("input data must contain at least two elements")}
+
+  if (!requireNamespace("stats", quietly = TRUE)) {stop("Package 'stats' is needed")}
+
   if (any(is.na(c(x,y)))){
     x[is.na(x)]<-0
     y[is.na(y)]<-0
     warning("missing values replaced with zeroes")}
-  
-  alternative <- char.expand(alternative, c("two.sided", 
+
+  alternative <- char.expand(alternative, c("two.sided",
                                         "less", "greater","auto"))
   if (length(alternative) > 1L || is.na(alternative)){
     stop("alternative must be \"two.sided\", \"less\" or \"greater\"")}
@@ -90,7 +91,7 @@ Hutcheson.T.test<-function(x, y, shannon.base = exp(1), alternative = "two.sided
   estimate_dif<-diff(H[c(2,1)])
   if (alternative == "auto") {
     alternative <-if(estimate_dif<0){"less"}else{"greater"}}
-  
+
   if (alternative == "less") {
     pval <- pt(HutchesonTstat, df)
   }
