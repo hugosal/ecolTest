@@ -3,6 +3,7 @@
 #' @description This function generates a random community sample dataset that
 #'  satisfies user-specified characteristics.
 
+
 #' @details This function generates random community sample data: a numeric
 #' vector whose elements represent the number of individuals of a species in
 #'  a sample. The generated sample data is composed of a number of species
