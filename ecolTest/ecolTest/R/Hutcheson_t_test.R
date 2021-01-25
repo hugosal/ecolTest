@@ -103,11 +103,11 @@ Hutcheson_t_test <- function(x, y, shannon.base = exp(1),
     x <- c(x, rep(0, abs(length_diff)))
   }
   xy <- matrix(c(x, y), ncol=2)
-  N <- apply(xy, 2, sum)
-  H <- (N*log(N, shannon.base)-apply(xy*log(xy, shannon.base),
-                                   2, sum, na.rm = TRUE))/N
-  S<-(apply(xy*log(xy, shannon.base)**2, 2, sum, na.rm = TRUE) -
-      ((apply(xy*log(xy, shannon.base), 2, sum, na.rm = TRUE)**2)/N))/(N**2)
+  N <- colSums(xy)
+  H <- (N*log(N, shannon.base)-colSums(xy*log(xy, shannon.base),
+                                   na.rm = TRUE))/N
+  S<-(colSums(xy*log(xy, shannon.base)**2, na.rm = TRUE) -
+      ((colSums(xy*log(xy, shannon.base), na.rm = TRUE)**2)/N))/(N**2)
   Hutchesontstat <- (diff(H[c(2, 1)])-difference)/sqrt(sum(S))
   df <- (sum(S)**2)/(sum(S**2/N))
   estimate_dif <- diff(H[c(2,1)])
