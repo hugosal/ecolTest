@@ -33,7 +33,9 @@
 
 #' @examples
 
-#' # poner algun ejemlpo aqui tambien
+#' data("polychaeta_abundance")
+#' multiple_Hutcheson_t_test(x = polychaeta_abundance,
+#'                            shannon.base = 10)
 
 #' @export
 
@@ -52,7 +54,7 @@ multiple_Hutcheson_t_test <- function(x, shannon.base=exp(1)) {
   N <- apply(x,2,sum)
   H <- (N*log(N, shannon.base)-apply(x*log(x,shannon.base), 2,
                                      sum, na.rm = TRUE))/N
-  names(ny) <- names(nx) <- paste(colnames(x), round(H, 2), sep = " ")
+  names(ny) <- names(nx) <- paste(colnames(x), "H =", round(H, 2), sep = " ")
   vectorized_Hutcheson <- Vectorize(function(X, Y) {
     Hutcheson_t_test(x[, X], x[, Y],
                 shannon.base = shannon.base, alternative = "auto")$p.value})

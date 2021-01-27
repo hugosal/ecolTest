@@ -37,7 +37,9 @@ to use \code{Hutcheson_t_test()}.
 Missing values will be replaced with zero.
 }
 \examples{
-# poner algun ejemlpo aqui tambien
+data("polychaeta_abundance")
+multiple_Hutcheson_t_test(x = polychaeta_abundance,
+                           shannon.base = 10)
 }
 \seealso{
 See \code{\link{Hutcheson_t_test}} for test details.

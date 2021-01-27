@@ -54,8 +54,14 @@ two-sided tests are available.
 missing values will be replaced with zero values
 }
 \examples{
-# poner ejemplos, conseguir alguna base de datos que se publique con esto para usar aqui
-# prueba una cola, etc
+data("polychaeta_abundance")
+# two-sided test
+Hutcheson_t_test(x=polychaeta_abundance$Sample.1,
+                 y=polychaeta_abundance$Sample.2, shannon.base = 10)
+# one-sided test
+Hutcheson_t_test(x=polychaeta_abundance$Sample.1,
+                 y=polychaeta_abundance$Sample.2, shannon.base = 10,
+                 alternative = "greater")
 }
 \references{
 Zar, Jerrold H. 2010. Biostatistical Analysis. 5th ed. Pearson. pp. 174-176.

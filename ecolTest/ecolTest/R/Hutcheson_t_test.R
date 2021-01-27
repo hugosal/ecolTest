@@ -56,9 +56,15 @@
 
 #' @examples
 
-#' # poner ejemplos, conseguir alguna base de datos que se publique con esto para usar aqui
+#' data("polychaeta_abundance")
+#' # two-sided test
+#' Hutcheson_t_test(x=polychaeta_abundance$Sample.1,
+#'                  y=polychaeta_abundance$Sample.2, shannon.base = 10)
 
-#' # prueba una cola, etc
+#' # one-sided test
+#' Hutcheson_t_test(x=polychaeta_abundance$Sample.1,
+#'                  y=polychaeta_abundance$Sample.2, shannon.base = 10,
+#'                  alternative = "greater")
 
 #' @importFrom stats pt
 
