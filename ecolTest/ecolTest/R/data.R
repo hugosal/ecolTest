@@ -4,7 +4,7 @@
 #' collected in XXXXXXXXXXXXXXXXX on XXXXXXXXXXXXXXXXXXX
 #' by XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #'
-#' @format A data frame with 39 rows and 6 variables. Rownames are the name of 
+#' @format A data frame with 39 rows and 6 variables. Rownames are the name of
 #' the species, the columns correspond to number of sample:
 #' \describe{
 #' \item{Sample.1}{The abundance of each species in the sample 1}
