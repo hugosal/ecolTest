@@ -21,9 +21,10 @@
 #' @param shannon.base Numeric value indicating the logarithm base for computing
 #' the Shannon indexes. Defaults to \emph{exp(1)}.
 
-#' @return A matrix whose entries are the p-values of the test. The names
-#' of the rows and columns are the names of the communities and its Shannon
-#' diversity index.
+#' @return A matrix whose entries are the p-values of the test rounded to
+#' five digits. Self-comparison elements (matrix diagonal) are flagged with \emph{NA}.
+#' The names of the rows and columns are the names of the communities and
+#' their Shannon diversity index.
 
 #' @seealso See \code{\link{Hutcheson_t_test}} for test details.
 
@@ -59,5 +60,9 @@ multiple_Hutcheson_t_test <- function(x, shannon.base=exp(1)) {
     Hutcheson_t_test(x[, X], x[, Y],
                 shannon.base = shannon.base, alternative = "auto")$p.value})
   p_values <- outer(nx, ny, FUN = vectorized_Hutcheson)
+  p_values<- round(p_values, 5)
+  for (i in 1:dim(p_values)[1]) {
+    p_values[i, i] <- NA
+  }
   return(list(p.values = p_values))
   }
