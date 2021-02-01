@@ -85,16 +85,23 @@ generate_random_community <- function(H_index, shannon.base=exp(1), sp_num,
   cost <- function(comun) {
           return(abs(H_index-sum(comun*log(comun, shannon.base))))
     }
+  choose_donor <- function(com, ntotal, step) {
+    for (d in sample(1:length(com))) {
+      if ((com[d]-(com[d]*step))*ntotal > 1) {
+        return(d)
+        }
+      }
+    d}
   iter <- 0
   while (abs(H_index - sum(community*log(community, shannon.base),
                            na.rm = T)) > tol) {
-    step_size <- 0.1+(((0.001-0.1)/(maxiter))*iter)
+    step_size <- 0.1
       if (iter > maxiter) {
         if (!(silent)) {
           message("Convergence failed")}
         return(list(community=NA, n_iter=NA))
       }
-    donor <- sample(1:sp_num, size = 1)
+    donor <- choose_donor(com = community, ntotal = ntotal, step = step_size)
     for (recipient in sample((1:sp_num)[-donor])) {
       neighbor <- community
       neighbor[recipient] <- neighbor[recipient]+(neighbor[donor]*step_size)
