@@ -5,9 +5,9 @@
 #' two communities.
 
 #' @details This function performs Hutcheson's t-test for comparing two
-#' sample's Shannon diversity indices. This test is based on Shannon diversity indices' value
-#' computed using a logarithm base specified by the user. One-sided or
-#' two-sided tests are available.
+#' sample's Shannon diversity indices. This test is based on Shannon diversity
+#' indices' value computed using a logarithm base specified by the user.
+#' One-sided and two-sided tests are available.
 
 #' @note Missing values will be replaced with zero values
 
@@ -84,17 +84,17 @@ Hutcheson_t_test <- function(x, y, shannon.base = exp(1),
   if (any(c(x,y) < 0, na.rm = TRUE)) {
     stop("x and y must be non-negative")
     }
-  if (any(c(length(x) < 2,length(y) < 2))) {
+  if (any(c(length(x) < 2, length(y) < 2))) {
     stop("x and y must contain at least two elements")
     }
-  if (any(c(sum(x) < 3,sum(y) < 3))) {
+  if (any(c(sum(x, na.rm = TRUE) < 3, sum(y, na.rm = TRUE) < 3))) {
     stop("x and y abundance must be at least two")
   }
   if (!requireNamespace("stats", quietly = TRUE)) {
     stop('Package "stats" is needed')
     }
 
-  if (any(is.na(c(x,y)))) {
+  if (any(is.na(c(x, y)))) {
     x[is.na(x)]<-0
     y[is.na(y)]<-0
     warning("missing values in x and y replaced with zeroes")

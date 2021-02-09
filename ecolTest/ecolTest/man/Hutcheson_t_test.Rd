@@ -46,9 +46,9 @@ two communities.
 }
 \details{
 This function performs Hutcheson's t-test for comparing two
-sample's Shannon diversity indices. This test is based on Shannon diversity indices' value
-computed using a logarithm base specified by the user. One-sided or
-two-sided tests are available.
+sample's Shannon diversity indices. This test is based on Shannon diversity
+indices' value computed using a logarithm base specified by the user.
+One-sided and two-sided tests are available.
 }
 \note{
 Missing values will be replaced with zero values
