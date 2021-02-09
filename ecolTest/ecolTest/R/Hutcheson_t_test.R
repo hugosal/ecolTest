@@ -5,11 +5,11 @@
 #' two communities.
 
 #' @details This function performs Hutcheson's t-test for comparing two
-#' diversity indices. This test is based on Shannon diversity indices' value
+#' sample's Shannon diversity indices. This test is based on Shannon diversity indices' value
 #' computed using a logarithm base specified by the user. One-sided or
 #' two-sided tests are available.
 
-#' @note missing values will be replaced with zero values
+#' @note Missing values will be replaced with zero values
 
 #' @param x,y Numeric vector of abundance of species for community \emph{x}
 #' and community \emph{y}
@@ -29,8 +29,8 @@
 #'   \item statistic: Value of the Hutcheson t statistic
 #'   \item parameter: The degrees of freedom of the t statistic parameter
 #'   \item p.value: The test's p-value.
-#'   \item estimate: The Shannon diversity indices
-#'   \item null.value:The  hypothesized value of the difference between
+#'   \item estimate: The Shannon diversity indices of x and y
+#'   \item null.value: The  hypothesized value of the difference between
 #'   the Shannon diversty indexes
 #'   \item method: Name of the test
 #'   \item alternative: The alternative hypothesis
@@ -59,11 +59,13 @@
 #' data("polychaeta_abundance")
 #' # two-sided test
 #' Hutcheson_t_test(x=polychaeta_abundance$Sample.1,
-#'                  y=polychaeta_abundance$Sample.2, shannon.base = 10)
+#'                  y=polychaeta_abundance$Sample.2,
+#'                  shannon.base = 10)
 
 #' # one-sided test
 #' Hutcheson_t_test(x=polychaeta_abundance$Sample.1,
-#'                  y=polychaeta_abundance$Sample.2, shannon.base = 10,
+#'                  y=polychaeta_abundance$Sample.2,
+#'                  shannon.base = 10,
 #'                  alternative = "greater")
 
 #' @importFrom stats pt
@@ -85,7 +87,9 @@ Hutcheson_t_test <- function(x, y, shannon.base = exp(1),
   if (any(c(length(x) < 2,length(y) < 2))) {
     stop("x and y must contain at least two elements")
     }
-
+  if (any(c(sum(x) < 3,sum(y) < 3))) {
+    stop("x and y abundance must be at least two")
+  }
   if (!requireNamespace("stats", quietly = TRUE)) {
     stop('Package "stats" is needed')
     }

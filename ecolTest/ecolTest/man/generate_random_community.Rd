@@ -61,8 +61,9 @@ set.seed(26)
 result <- generate_random_community(H_index = 2.7, sp_num = 20, ntotal = 200,
  maxiter = 300)
 random_community <- result$community
-total <- sum(random_community)
+
 #Compute H index
+total <- sum(random_community)
 -sum(random_community/total*log(random_community/total))
 
 #Default maxiter argument will not converge
