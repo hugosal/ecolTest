@@ -22,8 +22,8 @@ polychaeta_abundance
 }
 \description{
 A dataset containing the abundance of 38 species of Polychaeta
-collected in six samples from different locations in Bahía de los Ángeles, México,
-by Victoria María Díaz Castañeda (Lboratorio de Ecología del bentos marino,
-Departamente de Ecología Marina, CICESE).
+collected in 2013 from six samples from different locations in Bahía de los Ángeles, Ensenada, Baja California, México,
+by Victoria María Díaz Castañeda, PhD.  (Investigador Titular; Laboratorio de Ecología del bentos marino,
+Departamentoe de Ecología Marina, CICESE).
 }
 \keyword{datasets}
