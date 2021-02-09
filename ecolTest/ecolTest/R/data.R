@@ -1,8 +1,11 @@
 #' Polychaeta abundance recorded in six samples.
 #'
-#' A dataset containing the abundance of 38 species of Polychaeta worms
-#' collected in XXXXXXXXXXXXXXXXX on XXXXXXXXXXXXXXXXXXX
-#' by XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+#' A dataset containing the abundance of 38 species of Polychaeta
+#' collected in six samples from different locations in Bahía de los Ángeles, México,
+#' by Victoria María Díaz Castañeda (Lboratorio de Ecología del bentos marino,
+#' Departamente de Ecología Marina, CICESE).
+#'
+#' @encoding UTF-8
 #'
 #' @format A data frame with 39 rows and 6 variables. Rownames are the name of
 #' the species, the columns correspond to number of sample:
@@ -14,5 +17,4 @@
 #' \item{Sample.5}{The abundance of each species in the sample 5}
 #' \item{Sample.6}{The abundance of each species in the sample 6}
 #' }
-#' @source xxxxxxxxxxxxxxxxxx articulo o publicacion
 "polychaeta_abundance"

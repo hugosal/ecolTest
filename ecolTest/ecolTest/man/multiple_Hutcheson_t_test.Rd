@@ -14,9 +14,10 @@ Columns correspond to the communities and row to species.}
 the Shannon indexes. Defaults to \emph{exp(1)}.}
 }
 \value{
-A matrix whose entries are the p-values of the test. The names
-of the rows and columns are the names of the communities and its Shannon
-diversity index.
+A matrix whose entries are the p-values of the test rounded to
+five digits. Self-comparison elements (matrix diagonal) are flagged with \emph{NA}.
+The names of the rows and columns are the names of the communities and
+their Shannon diversity index.
 }
 \description{
 This function computes the p-values of the Hutcheson t-test to
