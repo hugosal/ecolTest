@@ -47,12 +47,14 @@
 
 #' @references
 
-#' Zar, Jerrold H. 2010. Biostatistical Analysis. 5th ed. Pearson. pp. 174-176.
+#' Zar, Jerrold H. 2010. Biostatistical Analysis. 5th ed. Pearson.
+#' pp. 174-176.
 
 #'
 
 #' Hutcheson, Kermit. 1970. A Test for Comparing Diversities Based on
 #' the Shannon Formula. Journal of Theoretical Biology 29: 151-54.
+#' <doi:10.1016/0022-5193(70)90124-4>
 
 #' @examples
 
