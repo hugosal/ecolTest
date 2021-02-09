@@ -52,7 +52,7 @@ multiple_Hutcheson_t_test <- function(x, shannon.base=exp(1)) {
     stop("x must have at least two columns and rows")
     }
   nx <- ny <- 1:ncol(x)
-  N <- apply(x,2,sum)
+  N <- colSums(x, na.rm = TRUE)
   H <- (N*log(N, shannon.base)-apply(x*log(x,shannon.base), 2,
                                      sum, na.rm = TRUE))/N
   names(ny) <- names(nx) <- paste(colnames(x), "H =", round(H, 2), sep = " ")
