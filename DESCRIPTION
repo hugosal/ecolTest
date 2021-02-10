@@ -1,0 +1,22 @@
+Package: ecolTest
+Title: Community Ecology Tests
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Hugo",
+           family = "Salinas",
+           role = c("aut", "cre"),
+           email = "hugosal@comunidad.unam.mx"),
+   person(given = "David",
+           family = "Ramirez-Delgado",
+           role = c("aut"),
+           email = "linfocitoth1@gmail.com"))
+Description: Functions and data sets to perform and demonstrate community ecology statistical tests, including Hutcheson's t-test.
+Imports:
+    stats
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
