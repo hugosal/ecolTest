@@ -1,2 +1,2 @@
-# Hutcheson-T-test
-R function to perform the Hutcheson diversity index T-test 
+# ecolTest
+This package contains functions to perform community ecology statistical tests, including Hutcheson´s t-test for differences in Shannon diversity indices.
