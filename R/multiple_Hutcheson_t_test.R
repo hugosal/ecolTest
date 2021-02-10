@@ -15,18 +15,18 @@
 
 #' @note Missing values will be replaced with zero.
 
-#' @param x Numeric dataframe or matrix of abundance of species per community.
-#' Columns correspond to the communities and row to species.
+#' @param x Numeric dataframe or matrix of abundance of species per community 
+#' sample. Columns must correspond to the samples and rows to species.
 
 #' @param shannon.base Numeric value indicating the logarithm base for computing
 #' the Shannon indexes. Defaults to \emph{exp(1)}.
 
-#' @return A matrix whose entries are the p-values of the test rounded to
+#' @return A matrix whose entries are the p-values from the test result rounded to
 #' five digits. Self-comparison elements (matrix diagonal) are flagged with \emph{NA}.
-#' The names of the rows and columns are the names of the communities and
+#' The names of the rows and columns are the names of the communities with
 #' their Shannon diversity index.
 
-#' @seealso See \code{\link{Hutcheson_t_test}} for test details.
+#' @seealso See \code{\link{Hutcheson_t_test}} for Hutcheson's t-test details.
 
 #' @author David Ramirez Delgado \email{linfocitoth1@gmail.com}.
 

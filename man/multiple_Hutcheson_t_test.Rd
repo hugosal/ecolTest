@@ -7,16 +7,16 @@
 multiple_Hutcheson_t_test(x, shannon.base = exp(1))
 }
 \arguments{
-\item{x}{Numeric dataframe or matrix of abundance of species per community.
-Columns correspond to the communities and row to species.}
+\item{x}{Numeric dataframe or matrix of abundance of species per community
+sample. Columns must correspond to the samples and rows to species.}
 
 \item{shannon.base}{Numeric value indicating the logarithm base for computing
 the Shannon indexes. Defaults to \emph{exp(1)}.}
 }
 \value{
-A matrix whose entries are the p-values of the test rounded to
+A matrix whose entries are the p-values from the test result rounded to
 five digits. Self-comparison elements (matrix diagonal) are flagged with \emph{NA}.
-The names of the rows and columns are the names of the communities and
+The names of the rows and columns are the names of the communities with
 their Shannon diversity index.
 }
 \description{
@@ -43,7 +43,7 @@ multiple_Hutcheson_t_test(x = polychaeta_abundance,
                            shannon.base = 10)
 }
 \seealso{
-See \code{\link{Hutcheson_t_test}} for test details.
+See \code{\link{Hutcheson_t_test}} for Hutcheson's t-test details.
 }
 \author{
 David Ramirez Delgado \email{linfocitoth1@gmail.com}.

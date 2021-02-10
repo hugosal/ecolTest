@@ -15,23 +15,27 @@ generate_random_community(
 )
 }
 \arguments{
-\item{H_index}{The value of the generated communty Shannon index H}
+\item{H_index}{The value of the generated communty Shannon diversity
+index H'.}
 
 \item{shannon.base}{A numeric value indicating the logarithm base for the
 Shanon indices. Defaults to \emph{e}.}
 
-\item{sp_num}{The number of species in the generated communty}
+\item{sp_num}{Numeric. The number of species in the generated community
+sample.}
 
-\item{ntotal}{The total number of individuals in the generated community}
+\item{ntotal}{Numeric. The total number of individuals in the generated
+community sample.}
 
-\item{tol}{The tolerance of the value of the diversity index of the
-generated community. Defaults to 0.0001}
+\item{tol}{Numeric. The tolerance of the diffrence of the diversity index
+of the generated community relative abundance and the H_index argument.
+Defaults to 0.0001.}
 
-\item{maxiter}{The maximum number of iterations to be performed.
-Defaults to 100}
+\item{maxiter}{Numeric. The maximum number of iterations to be performed.
+Defaults to 100.}
 
 \item{silent}{Logical. Indicates if convergence success or failure
-messages are omitted. Defaults to FALSE}
+messages are omitted. Defaults to FALSE.}
 }
 \value{
 A list containing the following components:
@@ -43,16 +47,16 @@ used to achieve convergence, else \emph{NA}
 }
 }
 \description{
-This function generates a random community sample dataset that
-satisfies user-specified characteristics.
+This function generates a random community sample dataset
+that has a user-specified Shannon diversity index, species number, and
+total abundance.
 }
 \details{
 This function generates random community sample data: a numeric
-vector whose elements represent the number of individuals of a species in
-a sample. The generated sample data is composed of a number of species
-with a total number of individuals set by the user, such that the
-community has a Shannon's diversity index approximately equal to a
-user-specified argument.
+vector whose elements represent a sample. The generated sample data is
+composed of a number of species with a total number of individuals set by
+the user, such that the community has a Shannon diversity index
+approximately equal to a user-specified argument.
 }
 \examples{
 # Generate a community with diversity index 2, composed of 20 species

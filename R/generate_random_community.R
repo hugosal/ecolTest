@@ -1,33 +1,37 @@
 #' @title Pseudo-random community generator
 
-#' @description This function generates a random community sample dataset that
-#'  satisfies user-specified characteristics.
+#' @description This function generates a random community sample dataset 
+#' that has a user-specified Shannon diversity index, species number, and 
+#' total abundance.
 
 
-#' @details This function generates random community sample data: a numeric
-#' vector whose elements represent the number of individuals of a species in
-#'  a sample. The generated sample data is composed of a number of species
-#'  with a total number of individuals set by the user, such that the
-#'  community has a Shannon's diversity index approximately equal to a
-#'  user-specified argument.
+#' @details This function generates random community sample data: a numeric 
+#' vector whose elements represent a sample. The generated sample data is 
+#' composed of a number of species with a total number of individuals set by 
+#' the user, such that the community has a Shannon diversity index 
+#' approximately equal to a user-specified argument.
 
-#' @param H_index The value of the generated communty Shannon index H
+#' @param H_index The value of the generated communty Shannon diversity 
+#' index H'.
 
 #' @param shannon.base A numeric value indicating the logarithm base for the
 #' Shanon indices. Defaults to \emph{e}.
 
-#' @param sp_num The number of species in the generated communty
+#' @param sp_num Numeric. The number of species in the generated community 
+#' sample.
 
-#' @param ntotal The total number of individuals in the generated community
+#' @param ntotal Numeric. The total number of individuals in the generated 
+#' community sample.
 
-#' @param tol The tolerance of the value of the diversity index of the
-#' generated community. Defaults to 0.0001
+#' @param tol Numeric. The tolerance of the diffrence of the diversity index 
+#' of the generated community relative abundance and the H_index argument. 
+#' Defaults to 0.0001.
 
-#' @param maxiter The maximum number of iterations to be performed.
-#' Defaults to 100
+#' @param maxiter Numeric. The maximum number of iterations to be performed.
+#' Defaults to 100.
 
 #' @param silent Logical. Indicates if convergence success or failure
-#'  messages are omitted. Defaults to FALSE
+#'  messages are omitted. Defaults to FALSE.
 
 #' @return A list containing the following components:
 

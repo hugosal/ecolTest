@@ -13,14 +13,14 @@ Hutcheson_t_test(
 )
 }
 \arguments{
-\item{x, y}{Numeric vector of abundance of species for community \emph{x}
-and community \emph{y}}
+\item{x, y}{Numeric vectors of abundance of species for community sample
+\emph{x} and community sample \emph{y}.}
 
 \item{shannon.base}{A numeric value indicating the logarithm base for the
 Shannon indices. Defaults to \emph{exp(1)}.}
 
 \item{alternative}{A character indicating the alternative hypothesis.
-Can be "two.sided"(default), "less", "greater", or "auto"}
+Can be "two.sided"(default), "less", "greater", or "auto".}
 
 \item{difference}{A numeric value indicating the hypothesized difference
 between the diversity indexes. Defaults to 0.}
@@ -28,30 +28,30 @@ between the diversity indexes. Defaults to 0.}
 \value{
 A list of class "htest" containing the following components:
 \itemize{
-\item statistic: Value of the Hutcheson t statistic
-\item parameter: The degrees of freedom of the t statistic parameter
+\item statistic: Value of the Hutcheson t-statistic.
+\item parameter: The degrees of freedom of the t-statistic parameter.
 \item p.value: The test's p-value.
-\item estimate: The Shannon diversity indices of x and y
+\item estimate: The Shannon diversity indices of x and y.
 \item null.value: The  hypothesized value of the difference between
-the Shannon diversty indexes
-\item method: Name of the test
-\item alternative: The alternative hypothesis
-\item data.name: Name of the data used in the test
+the Shannon diversty indexes.
+\item method: Name of the test.
+\item alternative: The alternative hypothesis.
+\item data.name: Name of the data used in the test.
 }
 }
 \description{
-This function performs Hutcheson's test for
+This function performs Hutcheson's t-test for
 significance of the difference between the diversity indices of
 two communities.
 }
 \details{
 This function performs Hutcheson's t-test for comparing two
 sample's Shannon diversity indices. This test is based on Shannon diversity
-indices' value computed using a logarithm base specified by the user.
+indices computed using a logarithm base specified by the user.
 One-sided and two-sided tests are available.
 }
 \note{
-Missing values will be replaced with zero values
+Missing values will be replaced with zero values.
 }
 \examples{
 data("polychaeta_abundance")

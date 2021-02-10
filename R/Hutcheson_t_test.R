@@ -1,24 +1,24 @@
 #' @title Hutcheson's t-test for two diversity indices.
 
-#' @description This function performs Hutcheson's test for
+#' @description This function performs Hutcheson's t-test for
 #' significance of the difference between the diversity indices of
 #' two communities.
 
 #' @details This function performs Hutcheson's t-test for comparing two
 #' sample's Shannon diversity indices. This test is based on Shannon diversity
-#' indices' value computed using a logarithm base specified by the user.
+#' indices computed using a logarithm base specified by the user.
 #' One-sided and two-sided tests are available.
 
-#' @note Missing values will be replaced with zero values
+#' @note Missing values will be replaced with zero values.
 
-#' @param x,y Numeric vector of abundance of species for community \emph{x}
-#' and community \emph{y}
+#' @param x,y Numeric vectors of abundance of species for community sample 
+#' \emph{x} and community sample \emph{y}.
 
 #' @param shannon.base A numeric value indicating the logarithm base for the
 #' Shannon indices. Defaults to \emph{exp(1)}.
 
 #' @param alternative A character indicating the alternative hypothesis.
-#' Can be "two.sided"(default), "less", "greater", or "auto"
+#' Can be "two.sided"(default), "less", "greater", or "auto".
 
 #' @param difference  A numeric value indicating the hypothesized difference
 #' between the diversity indexes. Defaults to 0.
@@ -26,15 +26,15 @@
 #' @return A list of class "htest" containing the following components:
 
 #' \itemize{
-#'   \item statistic: Value of the Hutcheson t statistic
-#'   \item parameter: The degrees of freedom of the t statistic parameter
+#'   \item statistic: Value of the Hutcheson t-statistic.
+#'   \item parameter: The degrees of freedom of the t-statistic parameter.
 #'   \item p.value: The test's p-value.
-#'   \item estimate: The Shannon diversity indices of x and y
+#'   \item estimate: The Shannon diversity indices of x and y.
 #'   \item null.value: The  hypothesized value of the difference between
-#'   the Shannon diversty indexes
-#'   \item method: Name of the test
-#'   \item alternative: The alternative hypothesis
-#'   \item data.name: Name of the data used in the test
+#'   the Shannon diversty indexes.
+#'   \item method: Name of the test.
+#'   \item alternative: The alternative hypothesis.
+#'   \item data.name: Name of the data used in the test.
 
 #' }
 
@@ -49,9 +49,7 @@
 
 #' Zar, Jerrold H. 2010. Biostatistical Analysis. 5th ed. Pearson.
 #' pp. 174-176.
-
-#'
-
+#' 
 #' Hutcheson, Kermit. 1970. A Test for Comparing Diversities Based on
 #' the Shannon Formula. Journal of Theoretical Biology 29: 151-54.
 #' <doi:10.1016/0022-5193(70)90124-4>
@@ -97,19 +95,19 @@ Hutcheson_t_test <- function(x, y, shannon.base = exp(1),
     }
 
   if (any(is.na(c(x, y)))) {
-    x[is.na(x)]<-0
-    y[is.na(y)]<-0
+    x[is.na(x)] <- 0
+    y[is.na(y)] <- 0
     warning("missing values in x and y replaced with zeroes")
     }
 
   alternative <- char.expand(alternative, c("two.sided",
-                                        "less", "greater","auto"))
+                                        "less", "greater", "auto"))
   if (length(alternative) > 1L || is.na(alternative)) {
     stop("alternative must be \"two.sided\", \"less\" or \"greater\"")
     }
   length_diff <- length(x)-length(y)
   if (length_diff > 0){
-    y<-c(y, rep(0, length_diff))
+    y <- c(y, rep(0, length_diff))
   }
   else if(length_diff < 0){
     x <- c(x, rep(0, abs(length_diff)))
