@@ -10,13 +10,13 @@ Authors@R:
            family = "Ramirez-Delgado",
            role = c("aut"),
            email = "linfocitoth1@gmail.com"))
-Description: Functions and data sets to perform and demonstrate community ecology statistical tests, including Hutcheson's t-test.
+Description: Functions and data sets to perform and demonstrate community ecology statistical tests, including Hutcheson's t-test (Hutcheson, 1970; <doi:10.1016/0022-5193(70)90124-4>).
 Imports:
     stats
 License: MIT + file LICENSE
 Encoding: UTF-8
-BugReports: https://github.com/hugosal/Hutcheson-T-test/issues
-URL: https://github.com/hugosal/Hutcheson-T-test
+BugReports: https://github.com/hugosal/ecolTest/issues
+URL: https://github.com/hugosal/ecolTest
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
